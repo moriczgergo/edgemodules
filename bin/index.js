@@ -12,12 +12,10 @@ if(!shell.which('git')){
 
 var modulesExists = fs.existsSync("node_modules/");
 if (modulesExists) {
-	console.log("node_modules/ exists.");
 	var modules = fs.readdirSync("node_modules/").filter(file => fs.statSync(path.join("node_modules/", file)).isDirectory());
 	modules.forEach(function (value, index){
 		var packagePath = path.join("node_modules/", value, "package.json");
 		var packageExists = fs.existsSync(packagePath);
-		console.log(packagePath);
 		if (packageExists){
 			var packageConfig = JSON.parse(fs.readFileSync(packagePath).toString());
 			console.log("Updating " + packageConfig.name + "...");
@@ -28,7 +26,6 @@ if (modulesExists) {
 				console.log("Couldn't update " + packageConfig.name + ", because repository type \"" + packageConfig.repository.type + "\" is not supported.");
 			} else {
 				rimraf(modulePath, function(){ //fuck async
-					console.log("Deleted " + packageConfig.name + ".");
 					if (packageConfig.repository.url.startsWith("git+")){
 						packageConfig.repository.url = packageConfig.repository.url.substr("git+".length);
 					}
