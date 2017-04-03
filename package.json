@@ -1,0 +1,29 @@
+{
+  "name": "edgemodules",
+  "version": "1.0.0",
+  "description": "Get your node modules' bleeding edge version very fast.",
+  "bin": {
+    "edgemodules": "bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moriczgergo/edgemodules.git"
+  },
+  "keywords": [
+    "git",
+    "bleeding",
+    "edge",
+    "node",
+    "modules"
+  ],
+  "author": "skiilaa",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/moriczgergo/edgemodules/issues"
+  },
+  "homepage": "https://github.com/moriczgergo/edgemodules#readme",
+  "dependencies": {
+    "rimraf": "^2.6.1",
+    "shelljs": "^0.7.7"
+  }
+}
